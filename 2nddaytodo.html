@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>TO DO LIST</title>
+    <link rel="stylesheet" type="text/css" href="style2.css">
+
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<header>
+<div class="container">
+    <h3>MY TO-DO LIST</h3>
+    <input type="button" value="add activity" onclick="newElement()">
+
+    
+
+</div>
+</header>
+
+<body>
+
+    <div class="container">
+       
+
+        
+
+    </div>
+    
+    <ul id="myUL">
+
+    </ul>
+
+
+
+
+
+    <script>
+  
+        var boxName = 0;
+        function newElement() {
+            
+            var li = document.createElement("li");
+            var mi = document.createElement("input");
+            mi.setAttribute('type', 'text');
+            mi.setAttribute('value', '    ');
+            li.appendChild(mi);
+           
+            
+
+            document.getElementById("myUL").appendChild(li);
+
+            var btn = document.createElement("BUTTON");
+            var t = document.createTextNode("EDIT");
+            btn.appendChild(t);
+            li.appendChild(btn);
+            InputValue=mi.value;
+            
+            btn.onclick=function(){
+                
+                
+                 if(mi.disabled==true)
+                 {mi.disabled=false}
+                 else{
+                     mi.disabled=true
+                }
+            }
+        
+           
+        
+            
+            var bt = document.createElement("BUTTON");
+            var A = document.createTextNode("Delete");
+            bt.className = "close";
+            bt.appendChild(A);
+            li.appendChild(bt);
+            var close = document.getElementsByClassName("close");
+            var i;
+            
+           
+
+
+        
+            for (i = 0; i < close.length; i++) {
+                close[i].onclick = function () {
+                    var div = this.parentElement;
+                    div.style.display = "none";
+                }
+            }
+            
+            
+        }
+
+
+
+    </script>
+
+</body>
+
+
+
+
+</html>
